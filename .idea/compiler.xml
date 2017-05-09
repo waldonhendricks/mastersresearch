@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mastersresearch" />
+        <module name="za.ac.cput" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mastersresearch" target="1.7" />
+      <module name="za.ac.cput" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
