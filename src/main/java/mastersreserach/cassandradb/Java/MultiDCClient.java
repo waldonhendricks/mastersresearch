@@ -27,7 +27,15 @@ public class MultiDCClient {
 
     public static void main(String[] args) {
         MultiDCClient client = new MultiDCClient();
-        client.connect("10.47.3.102");
+        client.connect("10.47.2.151");
+        System.out.println("Adding Record");
+        long startTime = System.currentTimeMillis();
+
+        client.session.execute("CREATE DATABASE test");
+        long endTime = System.currentTimeMillis();
+        long diff = endTime - startTime;
+        System.out.println("Total time (in mill seconds) : " + (diff));
+        System.out.println("Database created !");
         client.session.close();
     }
 

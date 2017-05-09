@@ -12,9 +12,9 @@ public class ArangoDBMainTest {
     @Before
     public void setUp() throws Exception {
         arangoDB = new ArangoDB.Builder()
-                .host("10.47.3.105")
+                .host("10.47.2.1")
                 .user("root,")
-                .port(1026)
+                .port(1031)
                 .build();
 
 
@@ -24,18 +24,15 @@ public class ArangoDBMainTest {
 
 
     public void addRecord() throws Exception {
-        System.out.println(" Adding Record");
+        System.out.println("Adding Record");
         String dbName = "test";
         long startTime = System.currentTimeMillis();
 
-            arangoDB.createDatabase(dbName);
-            long endTime = System.currentTimeMillis();
-            long diff = endTime - startTime;
-            System.out.println("Total time (in mill seconds) : "
-                    + (diff));
-            System.out.println("Database created: " + dbName);
-
-        
-
+        arangoDB.createDatabase(dbName);
+        long endTime = System.currentTimeMillis();
+        long diff = endTime - startTime;
+        System.out.println("Total time (in mill seconds) : " + (diff));
+        System.out.println("Database created: " + dbName);
     }
+
 }
