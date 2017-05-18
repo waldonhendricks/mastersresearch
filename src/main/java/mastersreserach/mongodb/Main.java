@@ -25,7 +25,7 @@ public class Main {
         /**** Insert ****/
         // create a document to store key and value
         BasicDBObject document = new BasicDBObject();
-        document.put("name", "user1qwerty");
+        document.put("name", "user1");
         long startTime2 = System.currentTimeMillis();
         table.insert(document);
 
