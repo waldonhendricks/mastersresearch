@@ -10,12 +10,12 @@ public class Main {
 
         MongoClient mongoClient = new MongoClient("10.47.2.8", 27017);
 
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
 
         DB db = mongoClient.getDB("test");
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         long diff = endTime - startTime;
-        System.out.println("Total time (in mill seconds) : " + (diff));
+        System.out.println("Total time: " + (diff) + " ns");
 
 
         /**** Get collection / table from 'test' ****/
@@ -26,23 +26,23 @@ public class Main {
         // create a document to store key and value
         BasicDBObject document = new BasicDBObject();
         document.put("name", "user1");
-        long startTime2 = System.currentTimeMillis();
+        long startTime2 = System.nanoTime();
         table.insert(document);
 
-        long endTime2 = System.currentTimeMillis();
+        long endTime2 = System.nanoTime();
         long diff2 = endTime2 - startTime2;
-        System.out.println("Total time (in mill seconds) : " + (diff2));
+        System.out.println("Total time: " + (diff2) + " ns");
 
         /**** Find and display ****/
         BasicDBObject query = new BasicDBObject();
         query.put("name", "user1");
 
-        long startTime3 = System.currentTimeMillis();
+        long startTime3 = System.nanoTime();
         DBCursor cursor = table.find(query);
 
-        long endTime3 = System.currentTimeMillis();
+        long endTime3 = System.nanoTime();
         long diff3 = endTime3 - startTime3;
-        System.out.println("Total time (in mill seconds) : " + (diff3));
+        System.out.println("Total time: " + (diff3) + " ns");
 
         while (cursor.hasNext()) {
             System.out.println(cursor.next());

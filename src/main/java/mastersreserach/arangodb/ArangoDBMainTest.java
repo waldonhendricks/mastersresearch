@@ -26,12 +26,12 @@ public class ArangoDBMainTest {
     public void addRecord() throws Exception {
         System.out.println("\nAdding Record");
         String dbName = "test3";
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
 
         arangoDB.createDatabase(dbName);
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         long diff = endTime - startTime;
-        System.out.println("\nTotal time: " + (diff) + " ms");
+        System.out.println("\nTotal time: " + (diff) + " ns");
         System.out.println("\nDatabase created: " + dbName);
     }
 

@@ -33,15 +33,15 @@ public class MultiDCClient {
         client.connect("10.47.2.151");
 
         System.out.println("\nAdding Record");
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
 
         client.session.execute("INSERT INTO example.tweet (timeline, id, text) VALUES (?, ?, ?)",
                 "me", randomUUID(), "Hello World");
 
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         long diff = endTime - startTime;
 
-        System.out.println("\nTotal time: " + (diff) + " ms");
+        System.out.println("\nTotal time: " + (diff) + " ns");
 
         System.out.println("\nData written !");
 
