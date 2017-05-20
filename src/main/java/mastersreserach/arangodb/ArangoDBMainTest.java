@@ -24,15 +24,15 @@ public class ArangoDBMainTest {
 
 
     public void addRecord() throws Exception {
-        System.out.println("Adding Record");
-        String dbName = "test";
-        long startTime = System.currentTimeMillis();
+        System.out.println("\nAdding Record");
+        String dbName = "test3";
+        long startTime = System.nanoTime();
 
         arangoDB.createDatabase(dbName);
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
         long diff = endTime - startTime;
-        System.out.println("Total time (in mill seconds) : " + (diff));
-        System.out.println("Database created: " + dbName);
+        System.out.println("\nTotal time: " + (diff) + " ns");
+        System.out.println("\nDatabase created: " + dbName);
     }
 
 }
